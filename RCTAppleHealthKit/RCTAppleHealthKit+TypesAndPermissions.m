@@ -91,12 +91,19 @@
     }
     
     // workouts
-    if ([@"MindfulSession" isEqualToString: key] && systemVersion >= 10.0) {
-        return [HKObjectType categoryTypeForIdentifier:HKCategoryTypeIdentifierMindfulSession];
-    } else if ([@"Workout" isEqualToString: key]) {
+    if ([@"MindfulSession" isEqualToString: key]) {
+        if (@available(iOS 10.0, *)) {
+            return [HKObjectType categoryTypeForIdentifier:HKCategoryTypeIdentifierMindfulSession];
+        }
+    }
+    if ([@"Workout" isEqualToString: key]) {
         return [HKObjectType workoutType];
-    } else if ([@"WorkoutRoute" isEqualToString: key]) {
-        return [HKObjectType workoutRoute];
+    }
+    
+    if ([@"WorkoutRoute" isEqualToString: key]) {
+        if (@available(iOS 11.0, *)) {
+            return [HKSeriesType workoutRouteType];
+        }
     }
     
     return nil;
