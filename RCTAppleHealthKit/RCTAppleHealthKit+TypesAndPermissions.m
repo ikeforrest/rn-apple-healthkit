@@ -95,6 +95,8 @@
         return [HKObjectType categoryTypeForIdentifier:HKCategoryTypeIdentifierMindfulSession];
     } else if ([@"Workout" isEqualToString: key]){
         return [HKObjectType workoutType];
+    } else if (["@WorkoutRoute" isEqualToString: key]) {
+        return [HKObjectType workoutRouteType];
     }
     
     return nil;
