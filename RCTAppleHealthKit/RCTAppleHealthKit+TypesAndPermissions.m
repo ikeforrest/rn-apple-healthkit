@@ -14,9 +14,6 @@
 #pragma mark - HealthKit Permissions
 
 - (nullable HKObjectType *)getReadPermFromText:(nonnull NSString*)key {
-    UIDevice *deviceInfo = [UIDevice currentDevice];
-    float systemVersion = deviceInfo.systemVersion.floatValue;
-
     // Characteristic Identifiers
     if ([@"DateOfBirth" isEqualToString: key]) {
         return [HKObjectType characteristicTypeForIdentifier:HKCharacteristicTypeIdentifierDateOfBirth];
