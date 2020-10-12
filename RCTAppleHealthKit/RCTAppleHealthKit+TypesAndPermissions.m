@@ -225,9 +225,14 @@
         return [HKObjectType categoryTypeForIdentifier:HKCategoryTypeIdentifierSleepAnalysis];
     }
     
-    // Mindfulness
-    if([@"MindfulSession" isEqualToString:key]) {
-        return [HKObjectType categoryTypeForIdentifier:HKCategoryTypeIdentifierMindfulSession];
+    // Workouts
+    if ([@"MindfulSession" isEqualToString: key]) {
+        if (@available(iOS 10.0, *)) {
+            return [HKObjectType categoryTypeForIdentifier:HKCategoryTypeIdentifierMindfulSession];
+        }
+    }
+    if ([@"Workout" isEqualToString: key]) {
+        return [HKObjectType workoutType];
     }
     return nil;
 }
