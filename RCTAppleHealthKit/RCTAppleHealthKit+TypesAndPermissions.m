@@ -226,6 +226,11 @@
     }
     
     // Workouts
+    if ([@"MindfulSession" isEqualToString: key]) {
+        if (@available(iOS 10.0, *)) {
+            return [HKObjectType categoryTypeForIdentifier:HKCategoryTypeIdentifierMindfulSession];
+        }
+    }
     if ([@"Workout" isEqualToString: key]) {
         return [HKObjectType workoutType];
     }
