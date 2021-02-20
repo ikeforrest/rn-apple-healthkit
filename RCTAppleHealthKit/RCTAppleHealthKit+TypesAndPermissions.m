@@ -53,6 +53,10 @@
         return [HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierFlightsClimbed];
     }else if ([@"NikeFuel" isEqualToString: key]) {
         return [HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierNikeFuel];
+    }else if ([@"ActiveMinutes" isEqualToString: key]) {
+        if (@available(iOS 9.3, *)) {
+            return [HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierAppleExerciseTime];
+        }
     }
     
 //    if ([@"AppleExerciseTime" isEqualToString: key]) {
@@ -87,7 +91,7 @@
         return [HKObjectType categoryTypeForIdentifier:HKCategoryTypeIdentifierSleepAnalysis];
     }
     
-    // workouts
+    // Workouts
     if ([@"MindfulSession" isEqualToString: key]) {
         if (@available(iOS 10.0, *)) {
             return [HKObjectType categoryTypeForIdentifier:HKCategoryTypeIdentifierMindfulSession];

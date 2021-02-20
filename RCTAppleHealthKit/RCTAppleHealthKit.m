@@ -124,6 +124,10 @@ RCT_EXPORT_METHOD(saveLeanBodyMass:(NSDictionary *)input callback:(RCTResponseSe
     [self body_saveLeanBodyMass:input callback:callback];
 }
 
+RCT_EXPORT_METHOD(getActiveMinutes: (NSDictionary *)input callback:(RCTResponseSenderBlock)callback) {
+    [self fitness_getActiveMinutes:input callback:callback];
+}
+
 RCT_EXPORT_METHOD(getStepCount:(NSDictionary *)input callback:(RCTResponseSenderBlock)callback)
 {
     [self fitness_getStepCountOnDay:input callback:callback];

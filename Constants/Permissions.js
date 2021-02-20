@@ -4,6 +4,7 @@
  * @type {Object}
  */
 export const Permissions = {
+  ActiveMinutes: "ActiveMinutes",
   ActiveEnergyBurned: "ActiveEnergyBurned",
   AppleExerciseTime: "AppleExerciseTime",
   BasalEnergyBurned: "BasalEnergyBurned",
@@ -68,5 +69,5 @@ export const Permissions = {
   StepCount: "StepCount",
   Steps: "Steps",
   Weight: "Weight",
-  Workout: "Workout"
-}
+  Workout: "Workout",
+};
