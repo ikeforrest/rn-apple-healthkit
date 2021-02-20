@@ -16,9 +16,7 @@
 
 @implementation RCTAppleHealthKit (Methods_Fitness)
 
-- (void)fitness_getActiveMinutes:(NSDictionary *)input
-                         resolve:(RCTPromiseResolveBlock)resolve
-                          reject:(RCTPromiseRejectBlock)reject
+- (void)fitness_getActiveMinutes:(NSDictionary *)input callback:(RCTResponseSenderBlock)callback
 {
     HKUnit *unit = [RCTAppleHealthKit hkUnitFromOptions:input key:@"unit" withDefault:[HKUnit minuteUnit]];
     NSUInteger limit = [RCTAppleHealthKit uintFromOptions:input key:@"limit" withDefault:HKObjectQueryNoLimit];
